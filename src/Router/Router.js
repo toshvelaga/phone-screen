@@ -3,6 +3,7 @@ import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/rea
 import Roles from '../Roles/Roles'
 import Home from '../Home/Home'
 import RootComponent from '../RootComponent/RootComponent'
+import Templates from '../Templates/Templates'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import 'font-awesome/css/font-awesome.min.css';
 
@@ -12,11 +13,14 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 
 // Some doucumentation: https://reactjsexample.com/react-side-nav-component/
+// https://github.com/trendmicro-frontend/react-sidenav
 
 const Routers = () => {
 
     const styles = {
-        background: 'royalblue'
+        background: 'royalblue',
+        height: '100vh',
+        position: 'fixed'
     }
 
     return (<Router>
@@ -78,6 +82,7 @@ const Routers = () => {
                     <Route path="/" exact component={props => <RootComponent />} />
                     <Route path="/home" component={props => <Home />} />
                     <Route path="/roles" component={props => <Roles />} />
+                    <Route path="/templates" component={props => <Templates />} />
                 </main>
             </React.Fragment>
         )}
