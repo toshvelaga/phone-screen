@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Templates/Templates.css'
-import '../Templates/Questions/SalesQuestions'
-import Salesquestions from '../Templates/Questions/SalesQuestions';
+import './Questions/Salesquestions'
+import Salesquestions from './Questions/Salesquestions';
 import Dropdownselect from '../Templates/Dropdown/Dropdown';
 
 const Templates = () => {
@@ -13,7 +13,7 @@ const Templates = () => {
         <option value="Engineering">Engineering</option>
     </select> */}
         <Dropdownselect />
-        <Salesquestions/>
+        {/* <Salesquestions/> */}
     </div>);
 }
  

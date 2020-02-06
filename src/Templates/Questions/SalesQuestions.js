@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../Templates/Templates.css'
-import Title from '../Questions/Titles/Titles' 
-import Questioncard from '../Questions/Questioncard/Questioncard'
+import Title from './Titles/Titles' 
+import Questioncard from './Questioncard/Questioncard'
 
 // Inspiration: https://business.linkedin.com/talent-solutions/blog/interview-questions/2017/12-interview-questions-to-ask-every-sales-candidate
 
