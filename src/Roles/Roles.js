@@ -1,10 +1,11 @@
 import React from 'react';
-import Rolesquestions from './Rolesquestions/Rolesquestions'
+import Rolesdropdown from './RolesDropdown/RolesDropdown'
 
 const Roles = () => {
-    return (<div>
-        <Rolesquestions />
-    </div> );
+    return (<>
+    <h1>Roles</h1>
+    <Rolesdropdown />
+    </>);
 }
  
 export default Roles;
