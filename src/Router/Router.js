@@ -85,7 +85,6 @@ const Routers = () => {
                     <Route path="/roles" component={props => <Roles />} />
                     <Route path="/templates" component={props => <Templates />} />
                     <Route path="/candidates" component={props => <Candidates />} />
-
                 </main>
             </React.Fragment>
         )}
