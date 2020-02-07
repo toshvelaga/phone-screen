@@ -3,10 +3,10 @@ import Select from 'react-select';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const roles = [
-  { label: "Sales", value: 1 },
-  { label: "Marketing", value: 2 },
-  { label: "Engineering", value: 3 },
-  { label: "Tech Lead", value: 4 },
+  { label: "Sales", value: "Sales" },
+  { label: "Marketing", value: "Marketing" },
+  { label: "Engineering", value: "Engineering" },
+  { label: "Tech Lead", value: "Tech Lead" },
 ];
 
 const Rolesdropdown = () => (
