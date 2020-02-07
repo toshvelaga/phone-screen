@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import ReactSearchBox from 'react-search-box'
 
+// react-search-box docs: https://www.npmjs.com/package/react-search-box
+
 // import { MDBCol } from "mdbreact";
 // searchbar docs: https://mdbootstrap.com/docs/react/forms/search/
 

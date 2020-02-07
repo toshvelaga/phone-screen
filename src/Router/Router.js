@@ -2,6 +2,7 @@ import React from 'react';
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import Roles from '../Roles/Roles'
 import Home from '../Home/Home'
+import Interviews from '../Interviews/Interviews'
 import Candidates from '../Candidates/Candidates'
 import Newcandidates from '../Candidates/Newcandidates/Newcandidates'
 import RootComponent from '../RootComponent/RootComponent'
@@ -46,6 +47,16 @@ const Routers = () => {
                                 Home
                             </NavText>
                         </NavItem>
+
+                        <NavItem eventKey="interviews">
+                            <NavIcon>
+                                <i className="fa fa-fw fa-comments" style={{ fontSize: '1.75em' }} />
+                            </NavIcon>
+                            <NavText>
+                                Interviews
+                            </NavText>
+                        </NavItem>
+
                         <NavItem eventKey="roles">
                             <NavIcon>
                                 <i className="fa fa-fw fa-users" style={{ fontSize: '1.75em' }} />
@@ -87,6 +98,7 @@ const Routers = () => {
                     <Route path="/templates" component={props => <Templates />} />
                     <Route path="/candidates" component={props => <Candidates />} />
                     <Route path="/newcandidates" component={props => <Newcandidates />} />
+                    <Route path="/interviews" component={props => <Interviews />} />
                 </main>
             </React.Fragment>
         )}
