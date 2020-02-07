@@ -3,6 +3,7 @@ import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/rea
 import Roles from '../Roles/Roles'
 import Home from '../Home/Home'
 import Candidates from '../Candidates/Candidates'
+import Newcandidates from '../Candidates/Newcandidates/Newcandidates'
 import RootComponent from '../RootComponent/RootComponent'
 import Templates from '../Templates/Templates'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -85,6 +86,7 @@ const Routers = () => {
                     <Route path="/roles" component={props => <Roles />} />
                     <Route path="/templates" component={props => <Templates />} />
                     <Route path="/candidates" component={props => <Candidates />} />
+                    <Route path="/newcandidates" component={props => <Newcandidates />} />
                 </main>
             </React.Fragment>
         )}

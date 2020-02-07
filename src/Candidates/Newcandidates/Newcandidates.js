@@ -30,6 +30,7 @@ class Newcandidates extends React.Component {
   
     render() {
       return (<>
+      <h1>New Candidates</h1>
 <Form style={{width: '60%', margin: 'auto', marginTop: '50px', border: '1px solid #ccc', padding: '40px', borderRadius: '5px'}}>
 
     <Row>
