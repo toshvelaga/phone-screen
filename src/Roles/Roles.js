@@ -1,7 +1,10 @@
 import React from 'react';
+import Rolesquestions from './Rolesquestions/Rolesquestions'
 
 const Roles = () => {
-    return (<div>Roles</div> );
+    return (<div>
+        <Rolesquestions />
+    </div> );
 }
  
 export default Roles;

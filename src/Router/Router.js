@@ -2,6 +2,7 @@ import React from 'react';
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import Roles from '../Roles/Roles'
 import Home from '../Home/Home'
+import Candidates from '../Candidates/Candidates'
 import RootComponent from '../RootComponent/RootComponent'
 import Templates from '../Templates/Templates'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -83,6 +84,8 @@ const Routers = () => {
                     <Route path="/home" component={props => <Home />} />
                     <Route path="/roles" component={props => <Roles />} />
                     <Route path="/templates" component={props => <Templates />} />
+                    <Route path="/candidates" component={props => <Candidates />} />
+
                 </main>
             </React.Fragment>
         )}
