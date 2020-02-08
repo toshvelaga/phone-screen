@@ -6,18 +6,12 @@ const roles = [
   { label: "Sales", value: "Sales" },
   { label: "Marketing", value: "Marketing" },
   { label: "Engineering", value: "Engineering" },
-  { label: "Tech Lead", value: "Tech Lead" },
+  { label: "Tech Lead", value: "Tech" },
 ];
 
 const Rolesdropdown = () => (
-  <div className="container">
-    <div className="row">
-      <div className="col-md-4"></div>
-      <div className="col-md-4">
+  <div style={{width: '400px'}}>
         <Select options={ roles } />
-      </div>
-      <div className="col-md-4"></div>
-    </div>
   </div>
 );
 
