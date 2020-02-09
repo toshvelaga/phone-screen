@@ -4,7 +4,8 @@ import Searchbar from './Searchbar/Searchbar'
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import Candidatesdrop from './Candidatesdrop/Candidatesdrop';
-import Candidatesmodal from './Candidatesmodal/Candidatesmodal'
+import Candidatesmodal from './Candidatesmodal/Candidatesmodal';
+import Candidateinfo from './Candidateinfo/Candidateinfo'
 
 const Candidates = () => {
     return (<>
@@ -14,7 +15,7 @@ const Candidates = () => {
                 <Candidatesdrop /> 
                 <Candidatesmodal  />  
             </div>  
-
+                <Candidateinfo />
             </>);
 }
  

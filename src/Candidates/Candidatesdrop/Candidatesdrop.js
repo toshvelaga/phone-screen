@@ -2,7 +2,7 @@ import React from 'react';
 import Select from 'react-select';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const roles = [
+const people = [
   { label: "Steve Smith", value: "Steve Smith" },
   { label: "Barry Smith", value: "Barry Smith" },
   { label: "Lisa Manelli", value: "Lisa Manelli" },
@@ -11,7 +11,7 @@ const roles = [
 
 const Candidatesdrop = () => (
   <div style={{width: '400px'}}>
-        <Select options={ roles } />
+        <Select options={ people } />
   </div>
 );
 
