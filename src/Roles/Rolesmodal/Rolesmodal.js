@@ -3,33 +3,9 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl'
-import RolesDropdown from '../RolesDropdown/RolesDropdown';
+import Rolesdropdown, { Rolesdropdownfour } from '../RolesDropdown/RolesDropdown';
 
-// class Rolesmodal extends Component {
-//     constructor(props) {
-//         super(props);
-//         this.state= {}
-//     }
-
-//     render() { 
-//         return (<>
-//         <Modal.Dialog>
-//             <Modal.Header closeButton>
-//                 <Modal.Title>Modal title</Modal.Title>
-//             </Modal.Header>
-
-//             <Modal.Body>
-//                 <p>Modal body text goes here.</p>
-//             </Modal.Body>
-
-//             <Modal.Footer>
-//                 <Button variant="secondary" onClick={this.props.onHide}>Close</Button>
-//                 <Button variant="primary">Save changes</Button>
-//             </Modal.Footer>
-//         </Modal.Dialog>
-//         </>);
-//     }
-// }
+// modal docs: https://react-bootstrap.github.io/components/modal/
 
 function Rolesmodal() {
     const [show, setShow] = useState(false);
@@ -61,7 +37,7 @@ function Rolesmodal() {
             </div>
 
             <div style={{display: 'flex',justifyContent: 'center'}}>
-                <RolesDropdown /> 
+                <Rolesdropdownfour /> 
                 <Button style={{marginLeft: '10px'}} variant="danger">Delete</Button>
             </div>
 

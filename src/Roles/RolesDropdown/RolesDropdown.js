@@ -9,7 +9,15 @@ const roles = [
   { label: "Tech Lead", value: "Tech" },
 ];
 
+let styles;
+
 const Rolesdropdown = () => (
+  <div style={styles}>
+        <Select options={ roles } />
+  </div>
+);
+
+export const Rolesdropdownfour = () => (
   <div style={{width: '400px'}}>
         <Select options={ roles } />
   </div>
