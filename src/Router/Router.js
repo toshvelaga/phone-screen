@@ -92,7 +92,7 @@ const Routers = () => {
                     </SideNav.Nav>
                 </SideNav>
                 <main>
-                    <Route path="/" exact component={props => <RootComponent />} />
+                    <Route path="/" exact component={props => <Home />} />
                     <Route path="/home" component={props => <Home />} />
                     <Route path="/roles" component={props => <Roles />} />
                     <Route path="/templates" component={props => <Templates />} />

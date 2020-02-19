@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
-import Modalbody from '../Templatesmodal/Modalbody';
+import Modalbody from './Modalbody';
 
 // modal docs: https://react-bootstrap.github.io/components/modal/
 

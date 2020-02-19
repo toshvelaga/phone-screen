@@ -3,7 +3,7 @@ import Rolesdropdown, { Rolesdropdownfour } from './RolesDropdown/RolesDropdown'
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
-import Rolesmodal from '../Roles/Rolesmodal/Rolesmodal'
+import Rolesmodal from './Rolesmodal/Rolesmodal'
 
 class Roles extends Component {
 
