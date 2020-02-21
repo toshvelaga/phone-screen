@@ -23,5 +23,5 @@ class Roles extends Component {
         </>);
     }
 }
- 
+
 export default Roles;
