@@ -23,4 +23,16 @@ router.route('/add').post(function(req, res) {
         });
   });
 
+  router.route('/:id').get((req, res) => {
+    roles.findById(req.params.id)
+      .then(roles => res.json(roles))
+      .catch(err => res.status(400).json('Error: ' + err));
+  });
+  
+  router.route('/:id').delete((req, res) => { 
+    roles.findByIdAndDelete(req.params.id)
+      .then(() => res.json('Role deleted.'))
+      .catch(err => res.status(400).json('Error: ' + err));
+  });
+
 module.exports = router;
