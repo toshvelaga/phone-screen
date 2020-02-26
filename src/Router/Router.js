@@ -1,12 +1,11 @@
 import React from 'react';
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
-import Roles from '../Roles/Roles'
-import Home from '../Home/Home'
-import Interviews from '../Interviews/Interviews'
-import Candidates from '../Candidates/Candidates'
-import Newcandidates from '../Candidates/Newcandidates/Newcandidates'
-import RootComponent from '../RootComponent/RootComponent'
-import Templates from '../Templates/Templates'
+import Roles from '../Components/Roles/Roles'
+import Home from '../Components/Home/Home'
+import Interviews from '../Components/Interviews/Interviews'
+import Candidates from '../Components/Candidates/Candidates'
+import Newcandidates from '../Components/Candidates/Newcandidates/Newcandidates'
+import Templates from '../Components/Templates/Templates'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import 'font-awesome/css/font-awesome.min.css';
 
