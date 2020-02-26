@@ -1,26 +1,48 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Select from 'react-select';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
-const roles = [
-  { label: "Sales", value: "Sales" },
-  { label: "Marketing", value: "Marketing" },
-  { label: "Engineering", value: "Engineering" },
-  { label: "Tech Lead", value: "Tech" },
-];
+class RolesDropdown extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {roles: []};
+  }
 
-let styles;
+  componentDidMount() {
+    axios.get('http://localhost:4000/roles')
+        .then(res => {
+            this.setState({ roles: res.data });
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+  }
 
-const Rolesdropdown = () => (
-  <div style={styles}>
-        <Select options={ roles } />
-  </div>
-);
+  rolesList() {
+    return this.state.roles.map(currentrole => ({
+      label: currentrole.role_title, value: currentrole.role_title
+    }))
+  }
 
-export const Rolesdropdownfour = () => (
-  <div style={{width: '400px'}}>
-        <Select options={ roles } />
-  </div>
-);
+  render() {
 
-export default Rolesdropdown
+    console.log(this.rolesList())
+    const roles = this.rolesList()
+    
+    let styles;
+
+    return (  
+    <div style={{width: '400px'}}>
+      <Select options={ roles } />
+    </div>
+    );
+  }
+}
+ 
+  export default RolesDropdown;
+
+
+
+
+

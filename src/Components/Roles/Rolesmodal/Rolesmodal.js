@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl'
-import Rolesdropdown, { Rolesdropdownfour } from '../RolesDropdown/RolesDropdown';
+import RolesDropdown from '../RolesDropdown/RolesDropdown';
 import axios from 'axios';
 
 // modal docs: https://react-bootstrap.github.io/components/modal/
@@ -76,7 +76,7 @@ import axios from 'axios';
           </div>
 
           <div style={{display: 'flex',justifyContent: 'center'}}>
-              <Rolesdropdownfour /> 
+              <RolesDropdown /> 
               <Button style={{marginLeft: '10px'}} variant="danger">Delete</Button>
           </div>
 
