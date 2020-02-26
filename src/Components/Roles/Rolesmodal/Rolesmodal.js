@@ -28,17 +28,21 @@ import axios from 'axios';
     handleShow = () => {
       this.setState({ show: true})
     }
-    
+
     updateInput = (e) => {
       this.setState({
         role: e.target.value
       })
     }
 
+    Capitalize(str){
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
     onSubmit() {
   
       const roleadd = {
-        role_title: this.state.role
+        role_title: this.Capitalize(this.state.role)
       }
   
       console.log(roleadd);
