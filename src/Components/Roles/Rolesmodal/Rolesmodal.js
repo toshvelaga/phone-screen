@@ -21,6 +21,11 @@ import axios from 'axios';
        }
     }
 
+    myCallback = (dataFromChild) => {
+      // [...we will use the dataFromChild here...]
+      console.log("Hello friend")
+    }
+
     handleClose = () => {
       this.setState({ show: false})
     }
@@ -80,7 +85,7 @@ import axios from 'axios';
           </div>
 
           <div style={{display: 'flex',justifyContent: 'center'}}>
-              <RolesDropdown /> 
+              <RolesDropdown callbackFromParent={this.myCallback} /> 
               <Button style={{marginLeft: '10px'}} variant="danger">Delete</Button>
           </div>
 

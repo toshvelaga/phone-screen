@@ -6,17 +6,24 @@ import axios from 'axios';
 class RolesDropdown extends Component {
   constructor(props) {
     super(props);
+    this.handleChage = this.handleChage.bind(this)
+
     this.state = {
       roles: [],
       selectedOption: null,
     };
   }
 
-  handleChage = (selectedOption) => {
-    this.setState({ selectedOption });
-    console.log('Option Selected:', selectedOption)
+  someFn = () => {
+    // [...somewhere in here I define a variable listInfo which    I think will be useful as data in my ToDoList component...]
+    this.props.callbackFromParent("listInfo");
   }
 
+  handleChage = (selectedOption) => {
+    this.setState({ selectedOption });
+    console.log(selectedOption.id)
+  }
+  
   componentDidMount() {
     axios.get('http://localhost:4000/roles')
         .then(res => {
