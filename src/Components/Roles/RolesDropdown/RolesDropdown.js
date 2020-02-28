@@ -6,23 +6,21 @@ import axios from 'axios';
 class RolesDropdown extends Component {
   constructor(props) {
     super(props);
-    this.handleChage = this.handleChage.bind(this)
+    // this.handleChage = this.handleChage.bind(this)
 
     this.state = {
       roles: [],
-      selectedOption: null,
+      // selectedOption: null,
+      // selectedRole: 'data was passed'
     };
   }
 
-  someFn = () => {
-    // [...somewhere in here I define a variable listInfo which    I think will be useful as data in my ToDoList component...]
-    this.props.callbackFromParent("listInfo");
-  }
+  // handleChage = (selectedOption) => {
+  //   this.setState({ selectedOption });
+  //   console.log(selectedOption.id)
 
-  handleChage = (selectedOption) => {
-    this.setState({ selectedOption });
-    console.log(selectedOption.id)
-  }
+  //   // this.passIDtoParent()
+  // }
   
   componentDidMount() {
     axios.get('http://localhost:4000/roles')
@@ -32,17 +30,6 @@ class RolesDropdown extends Component {
         .catch(function (error) {
             console.log(error);
         })
-  }
-
-  // function that deletes the role from the database
-
-  deleteRole(id) {
-    axios.delete('http://localhost:4000/roles/'+id)
-      .then(response => { console.log(response.data)});
-  
-    this.setState({
-      roles: this.state.roles.filter(el => el._id !== id)
-    })
   }
 
   rolesList() {
@@ -57,7 +44,9 @@ class RolesDropdown extends Component {
     
     return (  
     <div style={{width: '400px'}}>
-      <Select onChange={this.handleChage} options={ roles } />
+      <Select
+      //  onChange={this.handleChage}
+       options={ roles } />
     </div>
     );
   }

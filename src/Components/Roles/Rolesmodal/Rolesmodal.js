@@ -3,8 +3,8 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl'
-import RolesDropdown from '../RolesDropdown/RolesDropdown';
 import axios from 'axios';
+import Select from 'react-select';
 
 // modal docs: https://react-bootstrap.github.io/components/modal/
 
@@ -18,13 +18,14 @@ import axios from 'axios';
       this.state = { 
         show: false,
         role: '',
+        roles: [],
+        selectedRoleId: "NOT SELECTED",
+        selectedOption: null,
+        selectedRole: 'data was passed'
        }
     }
 
-    myCallback = (dataFromChild) => {
-      // [...we will use the dataFromChild here...]
-      console.log("Hello friend")
-    }
+    // opens and closes the modal on click of Edit Roles Button
 
     handleClose = () => {
       this.setState({ show: false})
@@ -32,6 +33,29 @@ import axios from 'axios';
 
     handleShow = () => {
       this.setState({ show: true})
+    }
+
+    // gets roles data from database
+
+    componentDidMount() {
+      axios.get('http://localhost:4000/roles')
+          .then(res => {
+              this.setState({ roles: res.data });
+          })
+          .catch(function (error) {
+              console.log(error);
+          })
+    }
+
+    handleChage = (selectedOption) => {
+      this.setState({ selectedOption });
+      console.log(selectedOption.id)
+    }
+
+    rolesList() {
+      return this.state.roles.map(currentrole => ({
+        label: currentrole.role_title, value: currentrole.role_title, id: currentrole._id
+      }))
     }
 
     updateInput = (e) => {
@@ -45,7 +69,7 @@ import axios from 'axios';
     }
 
     onSubmit() {
-  
+      
       const roleadd = {
         role_title: this.Capitalize(this.state.role)
       }
@@ -60,7 +84,19 @@ import axios from 'axios';
       })
     }
 
+    deleteRole(id) {
+      axios.delete('http://localhost:4000/roles/'+id)
+        .then(response => { console.log(response.data)});
+    
+      this.setState({
+        roles: this.state.roles.filter(el => el._id !== id)
+      })
+    }
+
   render() { 
+
+    const roles = this.rolesList()
+
     return (
     <>
       <Button style={{marginLeft: '20px'}} variant="outline-success" onClick={this.handleShow}>
@@ -85,8 +121,10 @@ import axios from 'axios';
           </div>
 
           <div style={{display: 'flex',justifyContent: 'center'}}>
-              <RolesDropdown callbackFromParent={this.myCallback} /> 
-              <Button style={{marginLeft: '10px'}} variant="danger">Delete</Button>
+          <div style={{width: '400px'}}>
+            <Select onChange={this.handleChage} options={ roles } />
+          </div>
+          <Button style={{marginLeft: '10px'}} variant="danger">Delete</Button>
           </div>
 
         </Modal.Body>
