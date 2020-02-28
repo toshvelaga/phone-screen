@@ -9,23 +9,13 @@ import Select from 'react-select';
 // modal docs: https://react-bootstrap.github.io/components/modal/
 
   class Rolesmodal extends Component {
-    constructor(props) {
-      super(props);
-
-      this.updateInput = this.updateInput.bind(this);
-      this.onSubmit = this.onSubmit.bind(this);
-      this.deleteRole = this.deleteRole.bind(this)
-
-      this.state = { 
+      state = { 
         show: false,
         role: '',
         roles: [],
         selectedOption: null,
         id: null,
       }
-    }
-
-    // opens and closes the modal on click of Edit Roles Button
 
     handleClose = () => {
       this.setState({ show: false})
@@ -49,14 +39,14 @@ import Select from 'react-select';
 
     // When a role is selected in the dropdown the id of that role is set in the state
 
-    handleChage = (selectedOption) => {
+    handleChange = (selectedOption) => {
       this.setState({ selectedOption });
       this.setState({ id: selectedOption.id})
     }
 
     // creates an array of roles
 
-    rolesList() {
+    rolesList = () => {
       return this.state.roles.map(currentrole => ({
         label: currentrole.role_title, value: currentrole.role_title, id: currentrole._id
       }))
@@ -72,7 +62,7 @@ import Select from 'react-select';
       return str.charAt(0).toUpperCase() + str.slice(1);
     }
 
-    onSubmit() {
+    onSubmit = () => {
       
       const roleadd = {
         role_title: this.Capitalize(this.state.role)
@@ -89,31 +79,18 @@ import Select from 'react-select';
       })
     }
 
-    deleteRole(id) {
-
-      // remove deleted item from state
-
+    deleteRole = () =>  {
       axios.delete('http://localhost:4000/roles/'+this.state.id)
         .then(response => { console.log(response.data)})
-
-      // this.setState({
-      //   roles: this.state.roles.filter(el => el.id !== id)
-      // })
-
-      const currentroles = this.state.roles;
-
+      const id = this.state.id 
+      const roles = this.state.roles.filter(role => role._id !== id)
       this.setState(({
-        roles: currentroles.filter(role => role.id !== id)
+        roles
       }))
     }
 
-    render() { 
-      
-    console.log(this.state.id)  
-    const roles = this.rolesList()
-    console.log(roles)
-    console.log(this.state.roles)
-
+    render() {  
+    const roles = this.rolesList()  
     return (
     <>
       <Button style={{marginLeft: '20px'}} variant="outline-success" onClick={this.handleShow}>
@@ -143,9 +120,9 @@ import Select from 'react-select';
 
           <div style={{display: 'flex',justifyContent: 'center'}}>
           <div style={{width: '400px'}}>
-            <Select onChange={this.handleChage} options={ roles } />
+            <Select onChange={this.handleChange} options={ roles } />
           </div>
-          <Button onClick={this.deleteRole} style={{marginLeft: '10px'}} variant="danger">Delete</Button>
+          <Button onClick={() => this.deleteRole()} style={{marginLeft: '10px'}} variant="danger">Delete</Button>
           </div>
 
         </Modal.Body>
