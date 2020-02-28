@@ -14,15 +14,15 @@ import Select from 'react-select';
 
       this.updateInput = this.updateInput.bind(this);
       this.onSubmit = this.onSubmit.bind(this);
+      this.deleteRole = this.deleteRole.bind(this)
 
       this.state = { 
         show: false,
         role: '',
         roles: [],
-        selectedRoleId: "NOT SELECTED",
         selectedOption: null,
-        selectedRole: 'data was passed'
-       }
+        id: null,
+      }
     }
 
     // opens and closes the modal on click of Edit Roles Button
@@ -49,7 +49,7 @@ import Select from 'react-select';
 
     handleChage = (selectedOption) => {
       this.setState({ selectedOption });
-      console.log(selectedOption.id)
+      this.setState({ id: selectedOption.id})
     }
 
     rolesList() {
@@ -85,17 +85,25 @@ import Select from 'react-select';
     }
 
     deleteRole(id) {
-      axios.delete('http://localhost:4000/roles/'+id)
-        .then(response => { console.log(response.data)});
-    
+
+      // state of roles before deletion
+      const currentroles = this.state.roles
+
+      // remove deleted item from state
       this.setState({
-        roles: this.state.roles.filter(el => el._id !== id)
+        roles: this.state.roles.filter(el => el.id !== id)
       })
+
+      axios.delete('http://localhost:4000/roles/'+this.state.id)
+        .then(response => { console.log(response.data)})
+    
     }
 
-  render() { 
-
+    render() { 
+      
+    console.log(this.state.id)  
     const roles = this.rolesList()
+    console.log(roles)
 
     return (
     <>
@@ -124,7 +132,7 @@ import Select from 'react-select';
           <div style={{width: '400px'}}>
             <Select onChange={this.handleChage} options={ roles } />
           </div>
-          <Button style={{marginLeft: '10px'}} variant="danger">Delete</Button>
+          <Button onClick={this.deleteRole} style={{marginLeft: '10px'}} variant="danger">Delete</Button>
           </div>
 
         </Modal.Body>
