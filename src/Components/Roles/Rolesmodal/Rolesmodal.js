@@ -47,10 +47,14 @@ import Select from 'react-select';
           })
     }
 
+    // When a role is selected in the dropdown the id of that role is set in the state
+
     handleChage = (selectedOption) => {
       this.setState({ selectedOption });
       this.setState({ id: selectedOption.id})
     }
+
+    // creates an array of roles
 
     rolesList() {
       return this.state.roles.map(currentrole => ({
@@ -80,23 +84,27 @@ import Select from 'react-select';
         .then(res => console.log(res.data));
   
       this.setState({
-        role: ''
+        role: '',
+        roles: [...this.state.roles, roleadd]
       })
     }
 
     deleteRole(id) {
 
-      // state of roles before deletion
-      const currentroles = this.state.roles
-
       // remove deleted item from state
-      this.setState({
-        roles: this.state.roles.filter(el => el.id !== id)
-      })
 
       axios.delete('http://localhost:4000/roles/'+this.state.id)
         .then(response => { console.log(response.data)})
-    
+
+      // this.setState({
+      //   roles: this.state.roles.filter(el => el.id !== id)
+      // })
+
+      const currentroles = this.state.roles;
+
+      this.setState(({
+        roles: currentroles.filter(role => role.id !== id)
+      }))
     }
 
     render() { 
@@ -104,6 +112,7 @@ import Select from 'react-select';
     console.log(this.state.id)  
     const roles = this.rolesList()
     console.log(roles)
+    console.log(this.state.roles)
 
     return (
     <>
@@ -119,7 +128,11 @@ import Select from 'react-select';
 
           <div style={{display: 'flex',justifyContent: 'center', marginBottom: '20px' }}>
               <InputGroup className="mb-3">
-                  <FormControl role={this.state.role} value={this.state.role} onChange={this.updateInput} style={{width: '400px'}}
+                  <FormControl 
+                  role={this.state.role} 
+                  value={this.state.role} 
+                  onChange={this.updateInput} 
+                  style={{width: '400px'}}
                   placeholder="Add new role"
                   aria-label="Add new role"
                   aria-describedby="basic-addon2"
