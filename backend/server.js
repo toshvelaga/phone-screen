@@ -24,5 +24,6 @@ app.listen(PORT, function() {
 // Routes
 
 const rolesRouter = require('./routes/roles');
-
+const candidatesRouter = require('./routes/candidates');
 app.use('/roles', rolesRouter);
+app.use('/candidates', candidatesRouter);

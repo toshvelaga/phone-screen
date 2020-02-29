@@ -12,7 +12,7 @@ let roles = require('../models/roles.model');
 
         const NewRoles = new roles({
             role_title
-        })
+    })
 
     NewRoles.save()
         .then(roles => {
