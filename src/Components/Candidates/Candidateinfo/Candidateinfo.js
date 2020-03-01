@@ -1,5 +1,4 @@
-import React from 'react'
-
+import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
@@ -19,11 +18,11 @@ const Candidateinfo = () => {
 
     }
 
-    return (<>
+    return (
+    <>
         <div className="container" style={styles}>
 
         <Form style={{width: '100%', padding: '40px', borderRadius: '5px', margin: 'auto'}}>
-
         <Row>
             <Col>
             <Form.Label>First Name</Form.Label>
@@ -87,7 +86,8 @@ const Candidateinfo = () => {
         </Form>
 
         </div>
-    </>);
+    </>
+    );
 }
  
 export default Candidateinfo;

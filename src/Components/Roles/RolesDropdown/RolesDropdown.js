@@ -10,17 +10,17 @@ class RolesDropdown extends Component {
 
     this.state = {
       roles: [],
-      // selectedOption: null,
+      selectedOption: null,
       // selectedRole: 'data was passed'
     };
   }
 
-  // handleChage = (selectedOption) => {
-  //   this.setState({ selectedOption });
-  //   console.log(selectedOption.id)
+  handleChage = (selectedOption) => {
+    this.setState({ selectedOption });
+    console.log(selectedOption)
 
-  //   // this.passIDtoParent()
-  // }
+    // this.passIDtoParent()
+  }
   
   componentDidMount() {
     axios.get('http://localhost:4000/roles')
@@ -39,13 +39,12 @@ class RolesDropdown extends Component {
   }
 
   render() {
-    console.log(this.rolesList())
     const roles = this.rolesList()
     
     return (  
     <div style={{width: '400px'}}>
       <Select
-      //  onChange={this.handleChage}
+       onChange={this.handleChage}
        options={ roles } />
     </div>
     );
