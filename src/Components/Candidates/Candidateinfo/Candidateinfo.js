@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Candidatesdrop from '../Candidatesdrop/Candidatesdrop';
 import RolesDropdown from '../../Roles/RolesDropdown/RolesDropdown';
 
-const Candidateinfo = () => {
+const Candidateinfo = (props) => {
 
     const styles = {
         marginTop: '25px',
@@ -26,7 +26,7 @@ const Candidateinfo = () => {
         <Row>
             <Col>
             <Form.Label>First Name</Form.Label>
-            <Form.Control readOnly placeholder="Steve" />
+            <Form.Control readOnly placeholder={props.First_Name} />
             </Col>
             <Col>
             <Form.Label>Last Name</Form.Label>
