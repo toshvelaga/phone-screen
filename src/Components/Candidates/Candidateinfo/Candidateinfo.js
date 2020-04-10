@@ -30,7 +30,7 @@ const Candidateinfo = (props) => {
             </Col>
             <Col>
             <Form.Label>Last Name</Form.Label>
-            <Form.Control readOnly placeholder="Smith" />
+            <Form.Control readOnly placeholder={props.Last_Name} />
             </Col>
         </Row>
 
@@ -38,13 +38,13 @@ const Candidateinfo = (props) => {
             <Col>
             <Form.Label>Email</Form.Label>
             <Form.Group controlId="formGridEmail">
-            <Form.Control readOnly type="email" placeholder="stevesmith@gmail.com" />
+            <Form.Control readOnly type="email" placeholder={props.Email} />
             </Form.Group>
             </Col>
             <Col>
             <Form.Label>Phone</Form.Label>
             <Form.Group controlId="formGridEmail">
-            <Form.Control readOnly placeholder="628-529-7700" />
+            <Form.Control readOnly placeholder={props.Phone} />
             </Form.Group>
             </Col>
         </Row>
@@ -53,13 +53,13 @@ const Candidateinfo = (props) => {
             <Col>
             <Form.Label>Position</Form.Label>
             <Form.Group controlId="formGridEmail">
-            <Form.Control readOnly placeholder="Sales" />
+            <Form.Control readOnly placeholder={props.Position} />
             </Form.Group>
             </Col>
             <Col>
             <Form.Label>Date Intervied</Form.Label>
             <Form.Group controlId="formGridEmail">
-            <Form.Control readOnly placeholder="2/08/2020" />
+            <Form.Control readOnly placeholder={props.Date} />
             </Form.Group>
             </Col>
         </Row>
@@ -67,17 +67,17 @@ const Candidateinfo = (props) => {
         <Form.Row style={{marginTop: '25px'}}>
         <Form.Group as={Col} controlId="formGridCity">
         <Form.Label>City</Form.Label>
-        <Form.Control readOnly placeholder="San Francisco"/>
+        <Form.Control readOnly placeholder={props.City}/>
         </Form.Group>
 
         <Form.Group as={Col} controlId="formGridState">
         <Form.Label>State</Form.Label>
-        <Form.Control readOnly placeholder="CA" />
+        <Form.Control readOnly placeholder={props.State} />
         </Form.Group>
 
         <Form.Group as={Col} controlId="formGridZip">
         <Form.Label>Zip</Form.Label>
-        <Form.Control readOnly placeholder="94127" />
+        <Form.Control readOnly placeholder={props.Zip} />
         </Form.Group>
         </Form.Row>
 

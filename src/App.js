@@ -3,7 +3,6 @@ import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/rea
 import Roles from '../src/Components/Roles/Roles'
 import Home from '../src/Components/Home/Home'
 import Interviews from '../src/Components/Interviews/Interviews'
-
 import Candidates from '../src/Components/Candidates/Candidates'
 // import Newcandidates from '../Components/Candidates/Newcandidates/Newcandidates'
 import Templates from '../src/Components/Templates/Templates'
