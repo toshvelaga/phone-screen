@@ -4,7 +4,7 @@ import Roles from '../Components/Roles/Roles'
 import Home from '../Components/Home/Home'
 import Interviews from '../Components/Interviews/Interviews'
 import Candidates from '../Components/Candidates/Candidates'
-import Newcandidates from '../Components/Candidates/Newcandidates/Newcandidates'
+// import Newcandidates from '../Components/Candidates/Newcandidates/Newcandidates'
 import Templates from '../Components/Templates/Templates'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import 'font-awesome/css/font-awesome.min.css';
@@ -96,13 +96,14 @@ const Routers = () => {
                     <Route path="/roles" component={props => <Roles />} />
                     <Route path="/templates" component={props => <Templates />} />
                     <Route path="/candidates" component={props => <Candidates />} />
-                    <Route path="/newcandidates" component={props => <Newcandidates />} />
+                    {/* <Route path="/newcandidates" component={props => <Newcandidates />} /> */}
                     <Route path="/interviews" component={props => <Interviews />} />
                 </main>
             </React.Fragment>
         )}
         />
-    </Router>  );
+    </Router>
+    );
 }
  
 export default Routers;
