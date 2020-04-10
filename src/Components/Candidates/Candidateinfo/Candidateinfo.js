@@ -81,6 +81,14 @@ const Candidateinfo = (props) => {
         </Form.Group>
         </Form.Row>
 
+        <Row style={{marginTop: '50px'}}>
+            <Col>
+            <Form.Group>
+                <Button style={{width: '100%'}}>Edit</Button>
+            </Form.Group>
+            </Col>
+        </Row>
+
         {/* Add upload resume/cv */}
 
         </Form>
