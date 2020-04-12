@@ -37,7 +37,7 @@ class Candidates extends Component {
                 <Candidatesdrop options={this.candidatesList()} /> 
                 <Candidatesmodal />  
             </div>  
-                <Candidateinfo First_Name="Steve" />
+                <Candidateinfo First_Name="sss" />
             </>);
     }
 }
