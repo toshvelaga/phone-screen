@@ -7,7 +7,7 @@ const PORT = 4000;
 app.use(cors());
 app.use(bodyParser.json());
 
-const dbRoute = 'mongodb+srv://toshvelaga:ybhA8bIrWE8jo6K0@cluster0-ckk4o.mongodb.net/test?retryWrites=true&w=majority';
+const dbRoute = '';
 
 mongoose.connect(dbRoute, { useNewUrlParser: true, useUnifiedTopology: true });
 const connection = mongoose.connection;
